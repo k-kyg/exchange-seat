@@ -55,6 +55,7 @@ class Classroom implements IClassroom {
 				const name = document.createElement("div");
 				const name_s = document.createElement("p");
 				seat.classList.add("mdc-card");
+				seat.classList.add("mdc-card--outlined");
 				seat.classList.add("seat");
 				seat.setAttribute("gird-row", `${i + 1}`);
 				seat.setAttribute("gird-column", `${y + 1}`);
@@ -78,4 +79,10 @@ const Main = (() => {
 	const classroom = new Classroom(Classroom.solveSeatArr(enrollment));
 	console.log(classroom)
 	classroom.generate();
+	window.addEventListener("resize", e => {
+		const classField = document.getElementById("classField");
+		const [row, column] = Classroom.solveSeatArr(enrollment);
+		classField!.style.gridTemplateRows = Array(row).fill(`${classField!.clientWidth / column * 2 / 3}px`).join(" ")
+		classField!.style.gridTemplateColumns = Array(column).fill(`${classField!.clientWidth / column}px`).join(" ")
+	})
 })();

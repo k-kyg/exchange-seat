@@ -11,11 +11,14 @@
 
 #classField{
 	display: grid;
+	max-width: 1000px;
+	margin: auto;
 }
 
 .seat{
 	display: grid;
 	grid-template-rows: 40% 60%;
+	margin: 5px;
 	.stu_num{
 		display: grid;
 		margin: 0;
@@ -27,6 +30,7 @@
 		margin: 0;
 		text-align: center;
 		place-items: center;
+		font-size: 1.25rem;
 	}
 	p{
 		margin: 0;
