@@ -43,10 +43,8 @@ class Classroom implements IClassroom {
 	}
 	generate(): void {
 		const classField = document.getElementById("classField");
-		classField!.style.gridTemplateRows = Array(this.row).fill(`${classField!.clientWidth / this.column * 2 / 3}px`).join(" ")
-		classField!.style.gridTemplateColumns = Array(this.column).fill(`${classField!.clientWidth / this.column}px`).join(" ")
-		// classField?.setAttribute("grid-template-rows", Array(this.row).fill(`${classField.clientHeight / this.row}px`).join(" "))
-		// classField?.setAttribute("grid-template-columns", Array(this.column).fill(`${classField.clientWidth / this.column}px`).join(" "))
+		classField!.style.gridTemplateRows = Array(this.row).fill(`${classField!.clientWidth / this.column * 2 / 3}px`).join(" ");
+		classField!.style.gridTemplateColumns = Array(this.column).fill(`${classField!.clientWidth / this.column}px`).join(" ");
 		this.seatsMap.forEach((arr, i) => {
 			arr.forEach((e, y) => {
 				const seat = document.createElement("div");
