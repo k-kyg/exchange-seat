@@ -1,8 +1,16 @@
+@use "@material/theme"with ($primary: #016FA3);
+
 @use "@material/icon-button";
 @use "@material/top-app-bar/mdc-top-app-bar";
 @use "@material/card";
+@use "@material/floating-label/mdc-floating-label";
+@use "@material/line-ripple/mdc-line-ripple";
+@use "@material/notched-outline/mdc-notched-outline";
+@use "@material/textfield";
+@include textfield.core-styles;
 @include card.core-styles;
 @include icon-button.core-styles;
+
 
 *{
 	font-family: Arial, Helvetica, sans-serif;
@@ -13,10 +21,15 @@
 	left: 0;
 }
 
+#controlTable{
+	text-align: center;
+}
+
 #classField{
 	display: grid;
-	max-width: 900px;
+	max-width: 800px;
 	margin: auto;
+	user-select: none;
 }
 
 .seat{
